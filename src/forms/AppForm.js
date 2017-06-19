@@ -7,7 +7,7 @@ import Input from './../components/Input';
 import { AppSyncValidate } from './../validations/appSyncValidation';
 import { AppAsyncValidation } from './../validations/appAsyncValidation';
 
-import './AppForm.scss';
+import './AppForm.css';
 
 class AppForm extends Component {
 

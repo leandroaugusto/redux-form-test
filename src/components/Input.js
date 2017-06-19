@@ -3,7 +3,6 @@ import { Col, FormGroup, ControlLabel, InputGroup, FormControl } from 'react-boo
 
 import loader from './images/loader.gif';
 
-import './Input.scss';
 import './Input.css';
 
 export default class Input extends Component {
@@ -11,24 +10,25 @@ export default class Input extends Component {
   render() {
     const { input, label, type } = this.props;
     const { asyncValidating, touched, error } = this.props.meta;
+
     return (
-      <FormGroup className="Input">
+      <FormGroup
+        validationState={touched && error ? 'error' : null}
+        className="Input"
+      >
         <ControlLabel>{label}</ControlLabel>
 
-        <InputGroup className={asyncValidating ? 'async-validating' : ''}>
-          <Col xs={touched && error || asyncValidating ? 6 : 12}>
+        <InputGroup>
+          <Col xs={asyncValidating ? 10 : 12}>
             <FormControl {...input} type={type} placeholder={label} />
+            {touched && error &&
+              <span className="Input__error">{error}</span>
+            }
           </Col>
 
           {asyncValidating &&
-            <Col xs={6}>
+            <Col xs={2}>
               <img src={loader} alt="loading" />
-            </Col>
-          }
-
-          {touched && error &&
-            <Col xs={6}>
-              <span>{error}</span>
             </Col>
           }
         </InputGroup>

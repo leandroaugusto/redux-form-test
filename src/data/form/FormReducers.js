@@ -1,7 +1,8 @@
 import * as types from './FormTypes';
 
 const initialState = {
-  value: 0,
+  sum: 0,
+  formData: null,
 };
 
 export const app = (state = initialState, action) => {
@@ -9,7 +10,12 @@ export const app = (state = initialState, action) => {
     case types.SUM:
       return {
         ...state,
-        value: action.value,
+        sum: action.value,
+      };
+    case types.FORM_DATA:
+      return {
+        ...state,
+        formData: action.values,
       };
     default:
       return state;

@@ -1,1 +1,2 @@
 export const SUM = 'SUM';
+export const FORM_DATA = 'FORM_DATA';
