@@ -16,8 +16,6 @@ class AppContainer extends Component {
   render() {
     const { formData, handleSubmit } = this.props;
 
-    console.log('STATE', this.props.formData);
-
     return (
       <div className="AppContainer">
         <AppForm onSubmit={handleSubmit} />

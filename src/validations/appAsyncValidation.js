@@ -18,8 +18,6 @@ export const AppAsyncValidation = values => {
     .catch((message) => {
       const errors = {};
 
-      console.log('CATCH', values, message);
-
       if (message.email) errors.email = 'Email já existe';
       if (message.nickname) errors.nickname = 'Apelido já existe';
 
